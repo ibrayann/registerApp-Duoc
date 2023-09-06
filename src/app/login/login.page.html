@@ -1,0 +1,38 @@
+<ion-content class="ion-content-center">
+  <!-- Logo del colegio -->
+  <ion-img
+    src="assets/logo.jpg"
+    style="width: 300px; height: 300px; margin: auto"
+  ></ion-img>
+
+  <!-- Formulario de inicio de sesión centrado -->
+  <div class="login-container">
+    <ion-item>
+      <ion-label position="floating">Nombre de Usuario</ion-label>
+      <ion-input
+        [(ngModel)]="username"
+        type="text"
+        placeholder="Nombre de Usuario"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item class="my-5">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input
+        [(ngModel)]="password"
+        type="password"
+        placeholder="Contraseña"
+      ></ion-input>
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      class="px-5"
+      shape="round"
+      color="light"
+      (click)="login()"
+    >
+      Iniciar Sesión
+    </ion-button>
+  </div>
+</ion-content>

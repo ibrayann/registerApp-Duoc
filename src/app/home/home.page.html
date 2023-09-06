@@ -1,20 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Página de Inicio </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let clase of clasesHoy" (click)="verDetalleClase(clase)">
+      <ion-label>
+        <h2>{{ clase.asignatura }}</h2>
+        <p>Horario: {{ clase.horaInicio }} - {{ clase.horaFin }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button [expand]="'block'" [color]="'danger'" (click)="logout()">
+    logout
+  </ion-button>
 </ion-content>
